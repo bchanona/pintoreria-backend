@@ -1,0 +1,44 @@
+{
+  "name": "pintoreria-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bchanona/pintoreria-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bchanona/pintoreria-backend/issues"
+  },
+  "homepage": "https://github.com/bchanona/pintoreria-backend#readme",
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.19.43",
+    "@types/pg": "^8.23.1",
+    "eslint": "^9.x.x",
+    "eslint-config-prettier": "^9.x.x",
+    "prettier": "^3.x.x",
+    "prisma": "^7.10.0",
+    "tsx": "^4.x.x",
+    "typescript": "^5.x.x",
+    "typescript-eslint": "^8.68.0"
+  }
+}
