@@ -116,15 +116,15 @@ El servidor quedará disponible en `http://localhost:3000`.
 Las ramas se nombran con el formato **`tipo/modulo`**:
 
 ```
-tipo/modulo-breve descripcion de lo que se hará
+tipo/modulo
 ```
 
 Ejemplos:
 
-- `feat/auth-implementar login y registro de usuarios`
-- `feat/sales-crear modulo de ventas`
-- `fix/catalog-corregir validacion de stock`
-- `chore/deps-actualizar dependencias`
+- `feat/auth`
+- `feat/sales`
+- `fix/catalog`
+- `chore/deps`
 
 ### Tipos de rama
 
