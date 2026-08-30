@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import {env} from './config/env';
+import router from "./routes/index"
 
 
 const app = express();
@@ -13,6 +14,9 @@ app.use(express.json());
 app.get('/health', async (req: Request, res: Response) => {
   res.json({ status: 'ok', message: 'Servidor corriendo correctamente' });
 });
+
+// Importar y usar las rutas
+app.use('/api', router);
 
 
 app.listen(PORT, () => {
