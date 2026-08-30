@@ -83,7 +83,6 @@ El servidor quedará disponible en `http://localhost:3000`.
 | Método | Ruta         | Descripción                              |
 | ------ | ------------ | ---------------------------------------- |
 | GET    | `/health`    | Verifica que el servidor esté corriendo  |
-| GET    | `/db-health` | Verifica la conexión a la base de datos  |
 
 ## Estructura del proyecto
 
