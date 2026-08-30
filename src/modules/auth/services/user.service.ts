@@ -1,14 +1,19 @@
-import bcrypt from 'bcrypt';
-import {UserEntity} from '../entities/user.entity';
-import {CreateUserDto} from '../dtos/create-user.dto';
-import {createUser} from '../repositories/user.repository';
+import { UserEntity } from '../entities/user.entity';
+import { CreateUserDto } from '../dtos/create-user.dto';
+import { DuplicateEmailError } from '../../../common/errors/';
+import { hashPassword } from '../../../common/security/password';
+import { userRepository } from '../repositories/user.repository';
 
+export async function registerUser(input: CreateUserDto): Promise<UserEntity> {
+  const email = input.email.trim().toLowerCase();
+  const fullName = input.fullName.trim();
 
-const SALT_ROUNDS = 10;
+  const existing = await userRepository.findByEmail(email);
+  if (existing) {
+    throw new DuplicateEmailError(email);
+  }
 
-export async function registerUser(input: CreateUserDto): Promise<UserEntity>{
-    const hashedPassword = await bcrypt.hash(input.password, SALT_ROUNDS);
+  const hashedPassword = await hashPassword(input.password);
 
-    return createUser({...input, password: hashedPassword});
-
+  return userRepository.create({ ...input, email, fullName, password: hashedPassword });
 }

@@ -11,6 +11,6 @@
     "skipLibCheck": true,
     "types": ["node"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/common/errors/duplicate-email.error.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

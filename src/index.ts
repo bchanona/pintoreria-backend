@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import {env} from './config/env';
 import router from "./routes/index"
+import { errorHandler } from './common/middlewares/error-handler.middleware';
 
 
 const app = express();
@@ -17,6 +18,9 @@ app.get('/health', async (req: Request, res: Response) => {
 
 // Importar y usar las rutas
 app.use('/api', router);
+
+// Manejador de errores central
+app.use(errorHandler);
 
 
 app.listen(PORT, () => {

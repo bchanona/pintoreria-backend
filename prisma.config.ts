@@ -5,6 +5,9 @@ const databaseUrl = `postgresql://${process.env.DATABASE_USER}:${process.env.DAT
 
 export default defineConfig({
   schema: 'prisma/schema.prisma',
+  migrations: {
+    seed: 'tsx prisma/seed.ts',
+  },
   datasource: {
     url: databaseUrl,
   },
